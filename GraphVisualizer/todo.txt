@@ -1,0 +1,213 @@
+Phase 1 — Core tree
++Build filesystem → Node tree
++Render tree to terminal
++Correct ├──, └──, │
++Ignore configurable directories/files
+Store full path in each node
++Store file extension
+Store whether node is file/directory
+Store parent reference
+Handle empty directories
+Handle permission/read errors gracefully
+
+
+
+
+
+Phase 2 — Tree operations
+Count total files
+Count total directories
+Calculate maximum depth
+Calculate size of a directory
+Find a node by name
+Find a node by path
+Find all files with an extension
+Find all files matching a pattern
+Get all descendants of a node
+Get the path from root → node
+Remove a node
+Add a node
+Move a node to another directory
+
+
+
+
+
+Phase 3 — Better rendering
+Show file sizes
+├── Main.java       4.2 KB
+├── README.md       1.1 KB
+└── src/
+Show file extensions/types
+Show directory/file counts
+Allow configurable indentation
+Allow hidden files toggle
+Allow files/directories toggle
+Allow maximum depth
+
+For example:
+
+visualizer --depth 3
+Sort alphabetically
+Sort directories before files
+Sort by size
+Sort by extension
+
+
+
+
+
+Phase 4 — Export
+Export tree to .txt
+Export tree to JSON
+Import tree from JSON
+Export tree to CSV
+Create a tree → JSON → tree round trip
+
+This is particularly useful because you'll learn how to serialize your data structure.
+
+
+
+
+
+Phase 5 — Project analysis
+
+This is where the project becomes much more interesting.
+
+Detect programming languages
+.java → Java
+.py → Python
+.cpp → C++
+Count lines of code
+Count comments
+Count blank lines
+Count files by language
+Find largest files
+Find deepest directories
+Find duplicated filenames
+Generate project statistics
+
+Something like:
+
+Project Statistics
+
+Files:       147
+Directories: 23
+
+Java:        82
+Python:      31
+XML:         18
+Other:       16
+
+Total LOC:   18,492
+
+
+
+
+
+
+Phase 6 — Source-code analysis
+
+This is the big jump.
+
+Parse source files
+Detect classes
+Detect methods/functions
+Detect imports
+Detect inheritance
+Detect interfaces
+Detect packages/modules
+Build relationships between source files
+
+For Python you could eventually use the built-in ast module.
+
+For Java, you'd eventually need a Java parser.
+
+
+
+
+Phase 7 — Dependency graph
+
+Now your tree becomes a graph.
+
+For example:
+
+MainController
+      │
+      ├────────→ StudySession
+      │              │
+      │              ↓
+      │         FlashcardService
+      │
+      └────────→ Flashcard
+
+Features:
+
+Build dependency graph
+Find dependencies of a file
+Find files that depend on a file
+Detect circular dependencies
+Find isolated files
+Calculate dependency counts
+Identify highly connected files
+Generate graph data
+
+
+
+
+
+
+Phase 8 — Visualization
+
+Only after the underlying data works well.
+
+Interactive tree
+Expand/collapse directories
+Click a file to inspect it
+Search files
+Filter by extension
+Zoom/pan
+Graph view
+Switch between tree and graph
+Highlight dependencies
+Highlight a selected file's dependents
+Show file metadata on selection
+
+
+
+
+
+
+Phase 9 — Architecture
+
+Eventually separate your application into something like:
+
+project_visualizer/
+│
+├── filesystem/
+│   └── scanner.py
+│
+├── model/
+│   ├── node.py
+│   └── tree.py
+│
+├── analysis/
+│   ├── statistics.py
+│   ├── parser.py
+│   └── dependencies.py
+│
+├── rendering/
+│   ├── console.py
+│   └── json.py
+│
+└── app.py
+Separate filesystem scanning from the tree
+Separate the tree from rendering
+Separate analysis from the tree
+Introduce interfaces/abstractions where they actually help
+Add unit tests
+Add error handling
+Add logging
+Add configuration
+Add CLI arguments
+Package the application
