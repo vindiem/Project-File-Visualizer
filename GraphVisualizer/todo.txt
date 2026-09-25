@@ -3,10 +3,10 @@ Phase 1 — Core tree
 +Render tree to terminal
 +Correct ├──, └──, │
 +Ignore configurable directories/files
-Store full path in each node
++Store full path in each node
 +Store file extension
-Store whether node is file/directory
-Store parent reference
++Store whether node is file/directory
++Store parent reference
 Handle empty directories
 Handle permission/read errors gracefully
 
@@ -15,11 +15,11 @@ Handle permission/read errors gracefully
 
 
 Phase 2 — Tree operations
-Count total files
-Count total directories
++Count total files
++Count total directories
 Calculate maximum depth
 Calculate size of a directory
-Find a node by name
++Find a node by name
 Find a node by path
 Find all files with an extension
 Find all files matching a pattern
